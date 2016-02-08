@@ -15,7 +15,6 @@ addons:
 env:
 - ARGS=""
 #- ARGS="--resolver lts-2"
-- ARGS="--resolver lts-5"
 - ARGS="--resolver lts"
 - ARGS="--resolver nightly"
 
@@ -28,7 +27,7 @@ before_install:
 # This line does all of the work: installs GHC if necessary, builds the
 # library, executables, and test suites, and runs the test suites.
 # `--no-terminal works` around some quirks in Travis's terminal implementation.
-script: stack $ARGS --no-terminal --install-ghc test --haddock
+script: stack $ARGS --no-terminal --install-ghc test
 
 # Caching so the next build will be fast too.
 cache:
